@@ -6,6 +6,6 @@ Tech blog articles:
 
 
 
-![Initialized application](./Screenshots/Initialized application.png)
+![Initialized application](./Screenshots/Initialized_application.png)
 
-![Reading OPC server values](./Screenshots/Reading OPC server values.png)
+![Reading OPC server values](./Screenshots/Reading_OPC_server_values.png)
