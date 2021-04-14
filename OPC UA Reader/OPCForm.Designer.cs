@@ -68,14 +68,14 @@
             this.panel_Orange.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_Orange.Location = new System.Drawing.Point(0, 0);
             this.panel_Orange.Name = "panel_Orange";
-            this.panel_Orange.Size = new System.Drawing.Size(215, 573);
+            this.panel_Orange.Size = new System.Drawing.Size(215, 644);
             this.panel_Orange.TabIndex = 1;
             // 
             // NetHistorian_WhiteText
             // 
             this.NetHistorian_WhiteText.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("NetHistorian_WhiteText.BackgroundImage")));
             this.NetHistorian_WhiteText.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.NetHistorian_WhiteText.Location = new System.Drawing.Point(56, 261);
+            this.NetHistorian_WhiteText.Location = new System.Drawing.Point(59, 309);
             this.NetHistorian_WhiteText.Name = "NetHistorian_WhiteText";
             this.NetHistorian_WhiteText.Size = new System.Drawing.Size(102, 59);
             this.NetHistorian_WhiteText.TabIndex = 1;
@@ -85,7 +85,7 @@
             // 
             this.NetHistorian_WhiteLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("NetHistorian_WhiteLogo.BackgroundImage")));
             this.NetHistorian_WhiteLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.NetHistorian_WhiteLogo.Location = new System.Drawing.Point(73, 183);
+            this.NetHistorian_WhiteLogo.Location = new System.Drawing.Point(76, 231);
             this.NetHistorian_WhiteLogo.Name = "NetHistorian_WhiteLogo";
             this.NetHistorian_WhiteLogo.Size = new System.Drawing.Size(66, 71);
             this.NetHistorian_WhiteLogo.TabIndex = 0;
@@ -98,7 +98,7 @@
             this.TagDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TagDataGridView.Location = new System.Drawing.Point(240, 231);
             this.TagDataGridView.Name = "TagDataGridView";
-            this.TagDataGridView.Size = new System.Drawing.Size(740, 243);
+            this.TagDataGridView.Size = new System.Drawing.Size(913, 286);
             this.TagDataGridView.TabIndex = 46;
             // 
             // Minimise_Button
@@ -106,7 +106,7 @@
             this.Minimise_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Minimise_Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Minimise_Button.BackgroundImage")));
             this.Minimise_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Minimise_Button.Location = new System.Drawing.Point(945, 12);
+            this.Minimise_Button.Location = new System.Drawing.Point(1117, 12);
             this.Minimise_Button.Name = "Minimise_Button";
             this.Minimise_Button.Size = new System.Drawing.Size(20, 20);
             this.Minimise_Button.TabIndex = 52;
@@ -118,7 +118,7 @@
             this.Close_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Close_Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Close_Button.BackgroundImage")));
             this.Close_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Close_Button.Location = new System.Drawing.Point(971, 12);
+            this.Close_Button.Location = new System.Drawing.Point(1143, 12);
             this.Close_Button.Name = "Close_Button";
             this.Close_Button.Size = new System.Drawing.Size(20, 20);
             this.Close_Button.TabIndex = 51;
@@ -136,7 +136,7 @@
             this.ReadButton.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReadButton.ForeColor = System.Drawing.Color.LightGray;
             this.ReadButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ReadButton.Location = new System.Drawing.Point(343, 500);
+            this.ReadButton.Location = new System.Drawing.Point(479, 559);
             this.ReadButton.Margin = new System.Windows.Forms.Padding(0);
             this.ReadButton.Name = "ReadButton";
             this.ReadButton.Size = new System.Drawing.Size(424, 46);
@@ -206,7 +206,7 @@
             this.ServerStatusTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ServerStatusTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ServerStatusTextBox.ForeColor = System.Drawing.Color.DimGray;
-            this.ServerStatusTextBox.Location = new System.Drawing.Point(757, 62);
+            this.ServerStatusTextBox.Location = new System.Drawing.Point(895, 62);
             this.ServerStatusTextBox.Name = "ServerStatusTextBox";
             this.ServerStatusTextBox.Size = new System.Drawing.Size(200, 20);
             this.ServerStatusTextBox.TabIndex = 60;
@@ -216,7 +216,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(754, 85);
+            this.label2.Location = new System.Drawing.Point(892, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(199, 13);
             this.label2.TabIndex = 59;
@@ -228,7 +228,7 @@
             this.CurrentServerTimeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CurrentServerTimeTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CurrentServerTimeTextBox.ForeColor = System.Drawing.Color.DimGray;
-            this.CurrentServerTimeTextBox.Location = new System.Drawing.Point(757, 170);
+            this.CurrentServerTimeTextBox.Location = new System.Drawing.Point(895, 170);
             this.CurrentServerTimeTextBox.Name = "CurrentServerTimeTextBox";
             this.CurrentServerTimeTextBox.Size = new System.Drawing.Size(200, 20);
             this.CurrentServerTimeTextBox.TabIndex = 64;
@@ -238,7 +238,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(754, 193);
+            this.label3.Location = new System.Drawing.Point(892, 193);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(199, 13);
             this.label3.TabIndex = 63;
@@ -250,7 +250,7 @@
             this.ServerStartTimeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ServerStartTimeTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ServerStartTimeTextBox.ForeColor = System.Drawing.Color.DimGray;
-            this.ServerStartTimeTextBox.Location = new System.Drawing.Point(757, 116);
+            this.ServerStartTimeTextBox.Location = new System.Drawing.Point(895, 116);
             this.ServerStartTimeTextBox.Name = "ServerStartTimeTextBox";
             this.ServerStartTimeTextBox.Size = new System.Drawing.Size(200, 20);
             this.ServerStartTimeTextBox.TabIndex = 62;
@@ -260,7 +260,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(754, 139);
+            this.label4.Location = new System.Drawing.Point(892, 139);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(199, 13);
             this.label4.TabIndex = 61;
@@ -272,7 +272,7 @@
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox5.Location = new System.Drawing.Point(640, 170);
+            this.textBox5.Location = new System.Drawing.Point(778, 170);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 67;
@@ -284,7 +284,7 @@
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox6.Location = new System.Drawing.Point(640, 116);
+            this.textBox6.Location = new System.Drawing.Point(778, 116);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 66;
@@ -296,7 +296,7 @@
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox7.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox7.Location = new System.Drawing.Point(640, 62);
+            this.textBox7.Location = new System.Drawing.Point(778, 62);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 20);
             this.textBox7.TabIndex = 65;
@@ -331,7 +331,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(1003, 573);
+            this.ClientSize = new System.Drawing.Size(1175, 644);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBox5);

@@ -21,6 +21,7 @@ namespace OPC_UA_Reader
         public OPCForm()
         {
             InitializeComponent();
+            TagDataGridView_TableLoad();
 
             // Initialize DataTable used to hold tag information
             _tagDataTable = new DataTable();
@@ -110,15 +111,19 @@ namespace OPC_UA_Reader
         }
 
         #region UI Configuration
-        private void CollectorParametersDataGridView_TableLoad()
+        private void TagDataGridView_TableLoad()
         {
-            TagDataGridView.EnableHeadersVisualStyles = true;
-            TagDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.Gray;
-            TagDataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 11, FontStyle.Regular);
+            TagDataGridView.EnableHeadersVisualStyles = false;
+            TagDataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            TagDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(64, 64, 64);
+            TagDataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 11, FontStyle.Bold);
             TagDataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            TagDataGridView.RowHeadersDefaultCellStyle.BackColor = Color.DarkGray;
+            TagDataGridView.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            TagDataGridView.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(64, 64, 64);
             TagDataGridView.RowHeadersVisible = false;
-            TagDataGridView.ColumnHeadersVisible = false;
+            TagDataGridView.ColumnHeadersVisible = true;
+
+            TagDataGridView.BorderStyle = BorderStyle.FixedSingle;
 
             //  *********************  Main Content Data Grid ********************
             // Font style
@@ -135,8 +140,7 @@ namespace OPC_UA_Reader
             this.TagDataGridView.DefaultCellStyle.SelectionBackColor = Color.FromArgb(64, 64, 64); //Color.Red;
 
             //Populate Data
-            TagDataGridView.RowHeadersVisible = false;
-            this.TagDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            this.TagDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void Close_Button_Click(object sender, EventArgs e)
