@@ -18,7 +18,7 @@ namespace OPC_UA_Reader
 
         }
 
-        private void READ_Button_Click(object sender, EventArgs e)
+        private void ReadButton_Click(object sender, EventArgs e)
         {
 
         }

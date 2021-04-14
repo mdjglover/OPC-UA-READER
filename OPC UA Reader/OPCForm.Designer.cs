@@ -35,21 +35,23 @@
             this.TagDataGridView = new System.Windows.Forms.DataGridView();
             this.Minimise_Button = new System.Windows.Forms.PictureBox();
             this.Close_Button = new System.Windows.Forms.PictureBox();
-            this.READ_Button = new System.Windows.Forms.Button();
-            this.IP_ADDRESS_TextBox = new System.Windows.Forms.TextBox();
+            this.ReadButton = new System.Windows.Forms.Button();
+            this.IPAddressTextBox = new System.Windows.Forms.TextBox();
             this.label_UserUnderline = new System.Windows.Forms.Label();
             this.label_LoginText = new System.Windows.Forms.Label();
-            this.PORT_TextBox = new System.Windows.Forms.TextBox();
+            this.PortTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.STATUS_TextBox = new System.Windows.Forms.TextBox();
+            this.ServerStatusTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.SERVERTIME_TextBox = new System.Windows.Forms.TextBox();
+            this.CurrentServerTimeTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.STARTTIME_TextBox = new System.Windows.Forms.TextBox();
+            this.ServerStartTimeTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel_Orange.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NetHistorian_WhiteText)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NetHistorian_WhiteLogo)).BeginInit();
@@ -96,7 +98,7 @@
             this.TagDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TagDataGridView.Location = new System.Drawing.Point(240, 231);
             this.TagDataGridView.Name = "TagDataGridView";
-            this.TagDataGridView.Size = new System.Drawing.Size(617, 243);
+            this.TagDataGridView.Size = new System.Drawing.Size(740, 243);
             this.TagDataGridView.TabIndex = 46;
             // 
             // Minimise_Button
@@ -104,7 +106,7 @@
             this.Minimise_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Minimise_Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Minimise_Button.BackgroundImage")));
             this.Minimise_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Minimise_Button.Location = new System.Drawing.Point(826, 12);
+            this.Minimise_Button.Location = new System.Drawing.Point(945, 12);
             this.Minimise_Button.Name = "Minimise_Button";
             this.Minimise_Button.Size = new System.Drawing.Size(20, 20);
             this.Minimise_Button.TabIndex = 52;
@@ -116,50 +118,50 @@
             this.Close_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Close_Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Close_Button.BackgroundImage")));
             this.Close_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Close_Button.Location = new System.Drawing.Point(852, 12);
+            this.Close_Button.Location = new System.Drawing.Point(971, 12);
             this.Close_Button.Name = "Close_Button";
             this.Close_Button.Size = new System.Drawing.Size(20, 20);
             this.Close_Button.TabIndex = 51;
             this.Close_Button.TabStop = false;
             this.Close_Button.Click += new System.EventHandler(this.Close_Button_Click);
             // 
-            // READ_Button
+            // ReadButton
             // 
-            this.READ_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.READ_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.READ_Button.FlatAppearance.BorderSize = 0;
-            this.READ_Button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.READ_Button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.READ_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.READ_Button.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.READ_Button.ForeColor = System.Drawing.Color.LightGray;
-            this.READ_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.READ_Button.Location = new System.Drawing.Point(343, 500);
-            this.READ_Button.Margin = new System.Windows.Forms.Padding(0);
-            this.READ_Button.Name = "READ_Button";
-            this.READ_Button.Size = new System.Drawing.Size(424, 46);
-            this.READ_Button.TabIndex = 53;
-            this.READ_Button.Text = "READ VALUES";
-            this.READ_Button.UseVisualStyleBackColor = false;
-            this.READ_Button.Click += new System.EventHandler(this.READ_Button_Click);
+            this.ReadButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.ReadButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ReadButton.FlatAppearance.BorderSize = 0;
+            this.ReadButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.ReadButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ReadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ReadButton.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReadButton.ForeColor = System.Drawing.Color.LightGray;
+            this.ReadButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ReadButton.Location = new System.Drawing.Point(343, 500);
+            this.ReadButton.Margin = new System.Windows.Forms.Padding(0);
+            this.ReadButton.Name = "ReadButton";
+            this.ReadButton.Size = new System.Drawing.Size(424, 46);
+            this.ReadButton.TabIndex = 53;
+            this.ReadButton.Text = "READ VALUES";
+            this.ReadButton.UseVisualStyleBackColor = false;
+            this.ReadButton.Click += new System.EventHandler(this.ReadButton_Click);
             // 
-            // IP_ADDRESS_TextBox
+            // IPAddressTextBox
             // 
-            this.IP_ADDRESS_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.IP_ADDRESS_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.IP_ADDRESS_TextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IP_ADDRESS_TextBox.ForeColor = System.Drawing.Color.DimGray;
-            this.IP_ADDRESS_TextBox.Location = new System.Drawing.Point(240, 62);
-            this.IP_ADDRESS_TextBox.Name = "IP_ADDRESS_TextBox";
-            this.IP_ADDRESS_TextBox.Size = new System.Drawing.Size(200, 20);
-            this.IP_ADDRESS_TextBox.TabIndex = 55;
-            this.IP_ADDRESS_TextBox.Text = "IP ADDRESS";
+            this.IPAddressTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.IPAddressTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.IPAddressTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IPAddressTextBox.ForeColor = System.Drawing.Color.DimGray;
+            this.IPAddressTextBox.Location = new System.Drawing.Point(357, 62);
+            this.IPAddressTextBox.Name = "IPAddressTextBox";
+            this.IPAddressTextBox.Size = new System.Drawing.Size(200, 20);
+            this.IPAddressTextBox.TabIndex = 55;
+            this.IPAddressTextBox.Text = "127.0.0.1";
             // 
             // label_UserUnderline
             // 
             this.label_UserUnderline.AutoSize = true;
             this.label_UserUnderline.ForeColor = System.Drawing.Color.DimGray;
-            this.label_UserUnderline.Location = new System.Drawing.Point(237, 85);
+            this.label_UserUnderline.Location = new System.Drawing.Point(354, 85);
             this.label_UserUnderline.Name = "label_UserUnderline";
             this.label_UserUnderline.Size = new System.Drawing.Size(199, 13);
             this.label_UserUnderline.TabIndex = 54;
@@ -176,89 +178,89 @@
             this.label_LoginText.TabIndex = 56;
             this.label_LoginText.Text = "OPC SERVER DETAIL";
             // 
-            // PORT_TextBox
+            // PortTextBox
             // 
-            this.PORT_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.PORT_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.PORT_TextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PORT_TextBox.ForeColor = System.Drawing.Color.DimGray;
-            this.PORT_TextBox.Location = new System.Drawing.Point(240, 116);
-            this.PORT_TextBox.Name = "PORT_TextBox";
-            this.PORT_TextBox.Size = new System.Drawing.Size(200, 20);
-            this.PORT_TextBox.TabIndex = 58;
-            this.PORT_TextBox.Text = "PORT";
+            this.PortTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.PortTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.PortTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PortTextBox.ForeColor = System.Drawing.Color.DimGray;
+            this.PortTextBox.Location = new System.Drawing.Point(357, 116);
+            this.PortTextBox.Name = "PortTextBox";
+            this.PortTextBox.Size = new System.Drawing.Size(200, 20);
+            this.PortTextBox.TabIndex = 58;
+            this.PortTextBox.Text = "49320";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(237, 139);
+            this.label1.Location = new System.Drawing.Point(354, 139);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(199, 13);
             this.label1.TabIndex = 57;
             this.label1.Text = "________________________________";
             // 
-            // STATUS_TextBox
+            // ServerStatusTextBox
             // 
-            this.STATUS_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.STATUS_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.STATUS_TextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.STATUS_TextBox.ForeColor = System.Drawing.Color.DimGray;
-            this.STATUS_TextBox.Location = new System.Drawing.Point(657, 62);
-            this.STATUS_TextBox.Name = "STATUS_TextBox";
-            this.STATUS_TextBox.Size = new System.Drawing.Size(200, 20);
-            this.STATUS_TextBox.TabIndex = 60;
-            this.STATUS_TextBox.Text = "..........";
+            this.ServerStatusTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.ServerStatusTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ServerStatusTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServerStatusTextBox.ForeColor = System.Drawing.Color.DimGray;
+            this.ServerStatusTextBox.Location = new System.Drawing.Point(757, 62);
+            this.ServerStatusTextBox.Name = "ServerStatusTextBox";
+            this.ServerStatusTextBox.Size = new System.Drawing.Size(200, 20);
+            this.ServerStatusTextBox.TabIndex = 60;
+            this.ServerStatusTextBox.Text = "..........";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(654, 85);
+            this.label2.Location = new System.Drawing.Point(754, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(199, 13);
             this.label2.TabIndex = 59;
             this.label2.Text = "________________________________";
             // 
-            // SERVERTIME_TextBox
+            // CurrentServerTimeTextBox
             // 
-            this.SERVERTIME_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.SERVERTIME_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.SERVERTIME_TextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SERVERTIME_TextBox.ForeColor = System.Drawing.Color.DimGray;
-            this.SERVERTIME_TextBox.Location = new System.Drawing.Point(657, 170);
-            this.SERVERTIME_TextBox.Name = "SERVERTIME_TextBox";
-            this.SERVERTIME_TextBox.Size = new System.Drawing.Size(200, 20);
-            this.SERVERTIME_TextBox.TabIndex = 64;
-            this.SERVERTIME_TextBox.Text = "..........";
+            this.CurrentServerTimeTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.CurrentServerTimeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CurrentServerTimeTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurrentServerTimeTextBox.ForeColor = System.Drawing.Color.DimGray;
+            this.CurrentServerTimeTextBox.Location = new System.Drawing.Point(757, 170);
+            this.CurrentServerTimeTextBox.Name = "CurrentServerTimeTextBox";
+            this.CurrentServerTimeTextBox.Size = new System.Drawing.Size(200, 20);
+            this.CurrentServerTimeTextBox.TabIndex = 64;
+            this.CurrentServerTimeTextBox.Text = "..........";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(654, 193);
+            this.label3.Location = new System.Drawing.Point(754, 193);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(199, 13);
             this.label3.TabIndex = 63;
             this.label3.Text = "________________________________";
             // 
-            // STARTTIME_TextBox
+            // ServerStartTimeTextBox
             // 
-            this.STARTTIME_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.STARTTIME_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.STARTTIME_TextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.STARTTIME_TextBox.ForeColor = System.Drawing.Color.DimGray;
-            this.STARTTIME_TextBox.Location = new System.Drawing.Point(657, 116);
-            this.STARTTIME_TextBox.Name = "STARTTIME_TextBox";
-            this.STARTTIME_TextBox.Size = new System.Drawing.Size(200, 20);
-            this.STARTTIME_TextBox.TabIndex = 62;
-            this.STARTTIME_TextBox.Text = "..........";
+            this.ServerStartTimeTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.ServerStartTimeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ServerStartTimeTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ServerStartTimeTextBox.ForeColor = System.Drawing.Color.DimGray;
+            this.ServerStartTimeTextBox.Location = new System.Drawing.Point(757, 116);
+            this.ServerStartTimeTextBox.Name = "ServerStartTimeTextBox";
+            this.ServerStartTimeTextBox.Size = new System.Drawing.Size(200, 20);
+            this.ServerStartTimeTextBox.TabIndex = 62;
+            this.ServerStartTimeTextBox.Text = "..........";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(654, 139);
+            this.label4.Location = new System.Drawing.Point(754, 139);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(199, 13);
             this.label4.TabIndex = 61;
@@ -270,7 +272,7 @@
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox5.Location = new System.Drawing.Point(540, 170);
+            this.textBox5.Location = new System.Drawing.Point(640, 170);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 67;
@@ -282,7 +284,7 @@
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox6.Location = new System.Drawing.Point(540, 116);
+            this.textBox6.Location = new System.Drawing.Point(640, 116);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 66;
@@ -294,33 +296,59 @@
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox7.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox7.Location = new System.Drawing.Point(540, 62);
+            this.textBox7.Location = new System.Drawing.Point(640, 62);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 20);
             this.textBox7.TabIndex = 65;
             this.textBox7.Text = "STATUS";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox1.Location = new System.Drawing.Point(240, 62);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 68;
+            this.textBox1.Text = "IP ADDRESS";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox2.Location = new System.Drawing.Point(240, 116);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 69;
+            this.textBox2.Text = "PORT";
             // 
             // OPCForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(884, 573);
+            this.ClientSize = new System.Drawing.Size(1003, 573);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.SERVERTIME_TextBox);
+            this.Controls.Add(this.CurrentServerTimeTextBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.STARTTIME_TextBox);
+            this.Controls.Add(this.ServerStartTimeTextBox);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.STATUS_TextBox);
+            this.Controls.Add(this.ServerStatusTextBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.PORT_TextBox);
+            this.Controls.Add(this.PortTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label_LoginText);
-            this.Controls.Add(this.IP_ADDRESS_TextBox);
+            this.Controls.Add(this.IPAddressTextBox);
             this.Controls.Add(this.label_UserUnderline);
-            this.Controls.Add(this.READ_Button);
+            this.Controls.Add(this.ReadButton);
             this.Controls.Add(this.Minimise_Button);
             this.Controls.Add(this.Close_Button);
             this.Controls.Add(this.TagDataGridView);
@@ -348,21 +376,23 @@
         private System.Windows.Forms.DataGridView TagDataGridView;
         private System.Windows.Forms.PictureBox Minimise_Button;
         private System.Windows.Forms.PictureBox Close_Button;
-        private System.Windows.Forms.Button READ_Button;
-        private System.Windows.Forms.TextBox IP_ADDRESS_TextBox;
+        private System.Windows.Forms.Button ReadButton;
+        private System.Windows.Forms.TextBox IPAddressTextBox;
         private System.Windows.Forms.Label label_UserUnderline;
         private System.Windows.Forms.Label label_LoginText;
-        private System.Windows.Forms.TextBox PORT_TextBox;
+        private System.Windows.Forms.TextBox PortTextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox STATUS_TextBox;
+        private System.Windows.Forms.TextBox ServerStatusTextBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox SERVERTIME_TextBox;
+        private System.Windows.Forms.TextBox CurrentServerTimeTextBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox STARTTIME_TextBox;
+        private System.Windows.Forms.TextBox ServerStartTimeTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 
