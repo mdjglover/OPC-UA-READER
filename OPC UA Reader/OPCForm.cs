@@ -1,25 +1,111 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
+using Opc.Ua;
+using Opc.Ua.Configuration;
+
 namespace OPC_UA_Reader
 {
     public partial class OPCForm : Form
     {
+        private DataTable _tagDataTable;
+
+        // OPC variables
+        private OPCUAClient _client;
+        private ApplicationInstance _application;
+
         public OPCForm()
         {
             InitializeComponent();
 
+            // Initialize DataTable used to hold tag information
+            _tagDataTable = new DataTable();
+            _tagDataTable.Columns.AddRange(new DataColumn[] {
+                new DataColumn("Tag Address"),
+                new DataColumn("Data Type"),
+                new DataColumn("Value"),
+                new DataColumn("Timestamp"),
+                new DataColumn("Quality")
+            });
 
+            // Add rows so I don't have to do it by hand every time
+            AddRows();
+
+            // Set DataTable as DataSource
+            TagDataGridView.DataSource = _tagDataTable;
+
+
+            // Initialize OPC UA Application Instance and load application configuration
+            // from .xml file. Strictly speaking, this step is not necessary to create a 
+            // connection with an OPC server as we will later see. However, it is good
+            // practice to do so, and allows for the configuration to be easily loaded
+            // and referenced in different parts of a proper program.
+            _application = new ApplicationInstance
+            {
+                ApplicationName = "OPC UA Tag Reader",
+                ApplicationType = ApplicationType.Client,
+            };
+
+            _application.LoadApplicationConfiguration("OpcUa.Config.xml", true);
 
         }
 
         private void ReadButton_Click(object sender, EventArgs e)
         {
+            if (_client == null)
+            {
+                // Get IP address and port
+                string ipAddress = IPAddressTextBox.Text;
+                string port = PortTextBox.Text;
+
+                _client = new OPCUAClient(ipAddress, port, _application.ApplicationConfiguration);
+            }
+
+            // Get server status and update TextBoxes
+            ServerStatusDataType serverStatus = _client.GetServerStatus();
+
+            ServerStatusTextBox.Text = serverStatus.State.ToString();
+            ServerStartTimeTextBox.Text = serverStatus.StartTime.ToLocalTime().ToString();
+            CurrentServerTimeTextBox.Text = serverStatus.CurrentTime.ToLocalTime().ToString();
+
+
+            // Loop through each tag, get value and update row
+            foreach (DataRow row in _tagDataTable.Rows)
+            {
+                DataValue dataValue = _client.GetValue(row["Tag Address"].ToString());
+
+                if (dataValue == null)
+                {
+                    continue;
+                }
+
+                row["Data Type"] = dataValue.WrappedValue.TypeInfo.ToString();
+                row["Value"] = dataValue.Value.ToString();
+                row["Timestamp"] = dataValue.SourceTimestamp.ToLocalTime().ToString();
+                row["Quality"] = StatusCode.IsGood(dataValue.StatusCode) ? "Good" : "Bad";
+            }
+        }
+
+        private void AddRows()
+        {
+            DataRow row1 = _tagDataTable.NewRow();
+            row1["Tag Address"] = "Channel1.Device1.Tag1";
+
+            _tagDataTable.Rows.Add(row1);
+
+            DataRow row2 = _tagDataTable.NewRow();
+            row2["Tag Address"] = "Channel1.Device1.Tag2";
+
+            _tagDataTable.Rows.Add(row2);
+
+            DataRow row3 = _tagDataTable.NewRow();
+            row3["Tag Address"] = "Channel1.Device1.Tag3";
+
+            _tagDataTable.Rows.Add(row3);
 
         }
 
