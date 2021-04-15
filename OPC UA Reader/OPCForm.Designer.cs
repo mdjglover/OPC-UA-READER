@@ -155,7 +155,6 @@
             this.IPAddressTextBox.Name = "IPAddressTextBox";
             this.IPAddressTextBox.Size = new System.Drawing.Size(200, 20);
             this.IPAddressTextBox.TabIndex = 55;
-            this.IPAddressTextBox.Text = "127.0.0.1";
             // 
             // label_UserUnderline
             // 
@@ -188,7 +187,6 @@
             this.PortTextBox.Name = "PortTextBox";
             this.PortTextBox.Size = new System.Drawing.Size(200, 20);
             this.PortTextBox.TabIndex = 58;
-            this.PortTextBox.Text = "49320";
             // 
             // label1
             // 

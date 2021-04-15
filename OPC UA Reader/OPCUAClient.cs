@@ -13,6 +13,19 @@ namespace OPC_UA_Reader
     {
         private Session _session;
 
+        public bool Connected
+        {
+            get
+            {
+                if (_session != null && _session.Connected)
+                {
+                    return true;
+                }
+
+                return false;
+            }
+        }
+
         public OPCUAClient(string ipAddress, string port, ApplicationConfiguration configuration=null)
         {
             if (configuration == null)
@@ -26,44 +39,73 @@ namespace OPC_UA_Reader
             // Create an endpoint to connect to
             string serverURL = $"opc.tcp://{ipAddress}:{port}";
 
-            EndpointDescription endpointDescription = CoreClientUtils.SelectEndpoint(serverURL, false);
-            EndpointConfiguration endpointConfiguration = EndpointConfiguration.Create(configuration);
-            ConfiguredEndpoint endpoint = new ConfiguredEndpoint(null, endpointDescription, endpointConfiguration);
-
-            // Session options
-            bool updateBeforeConnect = false;
-
-            bool checkDomain = false;
-
-            uint sessionTimeout = 30 * 60 * 1000;
-
-            // The identity of the user attempting to connect. This can be anonymous as is used here,
-            // or can be specified by a variety of means, including username and password, certificate,
-            // or token.
-            UserIdentity user = new UserIdentity();
-
-            List<string> preferredLocales = null;
-
-            // Create the session
-            Session session = Session.Create(
-                configuration,
-                endpoint,
-                updateBeforeConnect,
-                checkDomain,
-                configuration.ApplicationName,
-                sessionTimeout,
-                user,
-                preferredLocales
-            ).Result;
-
-            // If the session was successfully created, assign it
-            if (session != null && session.Connected)
+            try
             {
-                _session = session;
+                // As the KEPServer instance I'm connecting to isn't using security, I've passed false as the second argument here.
+                EndpointDescription endpointDescription = CoreClientUtils.SelectEndpoint(serverURL, false);
+                EndpointConfiguration endpointConfiguration = EndpointConfiguration.Create(configuration);
+                ConfiguredEndpoint endpoint = new ConfiguredEndpoint(null, endpointDescription, endpointConfiguration);
+
+                // Session options
+                // Sets whether or not the discovery endpoint is used to update the endpoint description before connecting.
+                bool updateBeforeConnect = false;
+
+                // Sets whether or not the domain in the certificate must match the endpoint used
+                bool checkDomain = false;
+
+                // The name to assign to the session
+                string sessionName = configuration.ApplicationName;
+
+                // The session's timeout interval
+                uint sessionTimeout = 30 * 60 * 1000;
+
+                // The identity of the user attempting to connect. This can be anonymous as is used here,
+                // or can be specified by a variety of means, including username and password, certificate,
+                // or token.
+                UserIdentity user = new UserIdentity();
+
+                // List of preferred locales
+                List<string> preferredLocales = null;
+
+                // Create the session
+                Session session = Session.Create(
+                    configuration,
+                    endpoint,
+                    updateBeforeConnect,
+                    checkDomain,
+                    sessionName,
+                    sessionTimeout,
+                    user,
+                    preferredLocales
+                ).Result;
+
+                // If the session was successfully created, assign it
+                if (session != null && session.Connected)
+                {
+                    _session = session;
+                }
+            }
+            catch
+            {
+                return;
             }
         }
 
-        public DataValue GetValue(string tagAddress)
+        public ServerStatusDataType GetServerStatus()
+        {
+            // Get the current DataValue object for the ServerStatus node
+            NodeId nodeId = new NodeId(Variables.Server_ServerStatus);
+            DataValue dataValue = _session.ReadValue(nodeId);
+
+            // Unpack the ExtensionObject that the DataValue contains, then return ServerStatusDataType object
+            // that represents the current server status
+            ExtensionObject extensionObject = (ExtensionObject)dataValue.Value;
+            ServerStatusDataType serverStatus = (ServerStatusDataType)extensionObject.Body;
+
+            return serverStatus;
+        }
+
+        public DataValue GetValue(string tagAddress, ushort namespaceIndex)
         {
             // To read a value, you require the node's ID. This can be either its unique integer ID, or a string
             // identifier along with the namespace which that identifier belongs to. Integer IDs are most useful
@@ -75,8 +117,8 @@ namespace OPC_UA_Reader
             // Here I am using the tag address in the format "Channel.Device.Tag", along with the KEPServer namespace
             // of 2 to read the tag's value. Both of the subsequent ways of creating a NodeId are equivalent.
 
-            // NodeId nodeId = new NodeId(tagAddress, 2);
-            NodeId nodeId = new NodeId($"ns=2;s={tagAddress}");
+            NodeId nodeId = new NodeId(tagAddress, namespaceIndex);
+           // NodeId nodeId = new NodeId($"ns={namespaceIndex};s={tagAddress}");
 
             try
             {
@@ -87,19 +129,6 @@ namespace OPC_UA_Reader
                 Console.WriteLine(e.Message);
                 return null;
             }
-        }
-
-        public ServerStatusDataType GetServerStatus()
-        {
-            // Get the current DataValue object for the ServerStatus node
-            DataValue dataValue = _session.ReadValue(Variables.Server_ServerStatus);
-
-            // Unpack the ExtensionObject that the DataValue contains, then return ServerStatusDataType object
-            // that represents the current server status
-            ExtensionObject extensionObject = (ExtensionObject)dataValue.Value;
-            ServerStatusDataType serverStatus = (ServerStatusDataType)extensionObject.Body;
-
-            return serverStatus;
-        }
+        } 
     }
 }

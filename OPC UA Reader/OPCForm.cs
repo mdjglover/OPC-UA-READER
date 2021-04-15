@@ -33,8 +33,7 @@ namespace OPC_UA_Reader
                 new DataColumn("Quality")
             });
 
-            // Add rows so I don't have to do it by hand every time
-            AddRows();
+            //AddDemoDetails();
 
             // Set DataTable as DataSource
             TagDataGridView.DataSource = _tagDataTable;
@@ -66,6 +65,14 @@ namespace OPC_UA_Reader
                 _client = new OPCUAClient(ipAddress, port, _application.ApplicationConfiguration);
             }
 
+            if (!_client.Connected)
+            {
+                // If the client hasn't connected something has gone wrong.
+                // Reset client and return
+                _client = null;
+                return;
+            }
+
             // Get server status and update TextBoxes
             ServerStatusDataType serverStatus = _client.GetServerStatus();
 
@@ -77,7 +84,7 @@ namespace OPC_UA_Reader
             // Loop through each tag, get value and update row
             foreach (DataRow row in _tagDataTable.Rows)
             {
-                DataValue dataValue = _client.GetValue(row["Tag Address"].ToString());
+                DataValue dataValue = _client.GetValue(row["Tag Address"].ToString(), 2);
 
                 if (dataValue == null)
                 {
@@ -91,8 +98,13 @@ namespace OPC_UA_Reader
             }
         }
 
-        private void AddRows()
+        #region Demo Details
+        private void AddDemoDetails()
         {
+            // Adds OPC details so I don't have to do it by hand every time
+            IPAddressTextBox.Text = "127.0.0.1";
+            PortTextBox.Text = "49320";
+
             DataRow row1 = _tagDataTable.NewRow();
             row1["Tag Address"] = "Channel1.Device1.Tag1";
 
@@ -109,6 +121,7 @@ namespace OPC_UA_Reader
             _tagDataTable.Rows.Add(row3);
 
         }
+        #endregion
 
         #region UI Configuration
         private void TagDataGridView_TableLoad()
